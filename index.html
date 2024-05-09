@@ -1,0 +1,87 @@
+<!--Esta línea declara que el documento es de tipo HTML5.  -->
+<!doctype html>
+<!-- Esta etiqueta <html> es la raíz de un documento HTML -->
+<html lang="en">
+    <!-- La etiqueta <head> contiene metadatos y enlaces a recursos externos que se utilizan en el documento HTML, como scripts, hojas de estilo, etc. -->
+    <head>
+
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <!-- initial-scale=1.0: Establece el nivel de escala inicial del documento. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    </head>
+    <!--La sección <body> contiene el contenido visible de la página web, incluida la estructura principal y los elementos.-->
+    <body style="background-image: url(IMAGEN/monochrome_blackboard_knowledge_mathematics_graph_numbers_science_equation-78453.jpg!d);">
+        
+        <!--Crea un contenedor adaptable para el contenido-->
+            <div class="container">
+                <!--Define una fila para el diseño (aunque no se usa mucho en este caso).-->
+                <div class="row">
+                    <!--Define un elemento de columna.-->
+                    <div class="col" Style="height:450px;background-color: rgba(255, 255, 255, 0.5); /* Define el color de fondo con transparencia */
+                    border: 5px solid #c09e9e; /* Define el borde del cuadro de texto */
+                    padding: 10px; /* Define el espaciado dentro del cuadro de texto */
+                    width: 26px; /* Define el ancho del cuadro de texto */
+                    color: #333; /* Define el color del texto dentro del cuadro de texto */
+                    margin-top: 100px;">
+                    <h1 style="text-align: center;">BIENVENIDOS  A LA  SERIE  FIBONACI </h1>
+                    <br>
+                    <br>
+                        <div class="panel panel-primary">
+                            <!--Aplica estilos a la sección del encabezado del panel.-->
+                            <div class="panel-heading"><strong>SERIE FIBONACI</strong>
+                            </div>
+                            <br>
+                            <!--Aplica estilos a la sección del cuerpo del panel donde se encuentra la entrada del usuario.-->
+                            <div class="panel-body">
+                                <input id="num" name="numero" class="form-control" type="number" placeholder="ingresa un numero">
+                                <button class="btn btn-success" onclick="fibonacci()">	Generar serie fibonacci</button>
+                            </div>
+                            <!--Aplica estilos a la sección del pie de página del panel donde se muestra el resultado.-->
+                            <div class="panel-footer" id="resultado" style="word-wrap: break-word;"></div>
+                        </div>	
+                    </div>
+                </div>
+                
+            </div>
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    <script>
+    /*contiene el código JavaScript que calcula la secuencia de Fibonacci*/
+    /*Se define la función*/
+    function fibonacci(){
+    /*Se declaran dos variables */
+	var x = 0;
+    /*recupera el valor ingresado por el usuario en el campo de entrada usando*/
+	var valor = document.getElementById('num').value;
+    /*Se crea una matriz vacía arreglo para almacenar los números de Fibonacci.*/
+	var arreglo = []; // Declares an empty array named "arreglo" to store Fibonacci sequence values.
+
+// Function to convert a string value to an integer (unused in this code)
+valor => parseInt(valor); // This line could be removed as it's not used in the current logic.
+
+    for (let x = 0; x < valor; x++) { // Loop iterates from 0 to "valor" (exclusive)
+    if (x === 0) {
+        arreglo.push(0); // Pushes 0 to the arreglo for the first element (base case).
+    } else if (x === 1) {
+        arreglo.push(1); // Pushes 1 to the arreglo for the second element (base case).
+    } else {
+        arreglo.push(arreglo[x - 1] + arreglo[x - 2]); // Calculates the next Fibonacci number using previous two elements.
+    }
+    }
+
+// Assuming there's an HTML element with ID "resultado" (check your HTML)
+document.getElementById("resultado").innerHTML = "<h3>" + arreglo + "</h3>"; // Displays the arreglo as an h3 heading within the element with ID "resultado".
+    }
+
+    </script>
